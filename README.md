@@ -1,6 +1,6 @@
 # Pymp4
 
-*pymp4 es un proyecto sencillo para descargar vidoos*
+*pymp4 es un proyecto sencillo para descargar videos*
 
 # Isntalacion
 ### pagina ofocial de python
