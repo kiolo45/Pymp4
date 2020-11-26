@@ -3,7 +3,7 @@
 *pymp4 es un proyecto sencillo para descargar videos*
 
 # Isntalacion
-### pagina ofocial de python
+### pagina oficial de python
 
 [python](https://www.python.org/)
 
