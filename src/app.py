@@ -1,7 +1,12 @@
+#!/usr/bin/python3
+
 from pyfiglet import Figlet
 from pafy import pafy
+from colorama import Fore
+import platform
+import os
 
-__autor__ = "Kiolo45"
+# Author: kiolo45,(jakepy)
 
 """
 COLORES DE LETRA:
@@ -13,21 +18,34 @@ WHITE = '\033[37m'
 RESET = '\033[39m'BLACK = '\033[30m'
 """
 
-# tema de letra 
-custom_fig = Figlet("graffiti")
-RED = '\033[31m'
-YELLOW = '\033[33m'
-BLUE = '\033[34m'
-GREEN = '\033[32m'
-
-# titulo
-m = custom_fig.renderText("mp4 Descargar")
-print(YELLOW+m)
-print(RED+"create By: Kiolo45\n")
+class Color:
+    B = Fore.BLACK
+    G = Fore.GREEN
+    R = Fore.RED
+    M = Fore.MAGENTA
+    C = Fore.CYAN
+    W = Fore.WHITE
+    OFF = Fore.RESET
 
 
-def main():
-    url = input(BLUE+"INGRESA LA URL DEL VIDEO: ")
+def clear():
+    if platform.system() == "Linux":
+        os.system("clear")
+    else:
+        exit(1)
+
+def banner():
+    # banner
+    clear()
+    ban = Figlet(font="alligator")
+    print(ban.renderText("Pymp4"))
+    print(f"{Color.R}[*]{Color.G}create By: {Color.M}Kiolo45 {Color.C}and {Color.B}Jakepy\n {Color.OFF}")
+
+
+def donwload_video():
+    banner()
+
+    url = str(input(f"{Color.R}[*]{Color.G}INGRESA LA URL DEL VIDEO: {Color.OFF}"))
 
     video = pafy.new(url)
 
@@ -39,10 +57,13 @@ def main():
     best = video.getbest()
     print(best.resolution, best.extension)
 
-    best.download(filepath=("/mnt/c/Users/Usuario/Desktop/descargas/")) # escribe la ruta donde se van a guardar los videos
-    print("\n")
-    print(GREEN+"Descarga finalizada :)")
+    os.system("mkdir ~/archivo")
+    best.download(filepath=("~/archivo")) # escribe la ruta donde se van a guardar los videos
+    print(f"{Color.R}[+] {Color.G}Descarga finalizada {Color.M}:) {Color.OFF}")
 
+
+def main():
+    donwload_video()
 
 if __name__=="__main__":
     main() 
