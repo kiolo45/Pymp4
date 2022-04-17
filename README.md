@@ -13,7 +13,15 @@ sudo apt-get install python3
 ````
 
 - descarga las librerias
-```bash
-pip3 install -U requirements.txt
+
+```sh
+python3 setup.py
+```
+
+### Ejecuta el programa
+
+```sh
+cd src/
+python3 app.py
 ```
 
