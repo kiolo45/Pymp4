@@ -12,7 +12,7 @@ print("*"*49)
 try:
     import colorama
     import pyfiglet
-    import pafy
+    import pytube
     print("[*] Ya tiene todo instalado")
     exit()
 
